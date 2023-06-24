@@ -18,9 +18,8 @@ pc = false
 local lastfakespin = "NONE"
 telex,teley = -1,-1
 local shownamespin = true
-local SB_COUNT = 0 -- Do not touch
-local GEMS_USED = 0 -- Do not touch
-ssb = false
+
+
  
 function sl()
 h1x,h1y,h2x,h2y,h3x,h3y = 0,0,0,0,0,0
@@ -63,7 +62,7 @@ var.netid = -1
  
 var[1] = [[
 set_default_color|`o
-add_label_with_icon|big|`9Introvert Proxy````|left|32|
+add_label_with_icon|big|`9Fayer Proxy````|left|32|
 add_image_button|banner|interface/large/menubanners.rttex|noflags|||
 add_smalltext|Here are your configurations.|
 add_spacer|small|
@@ -95,13 +94,13 @@ var.netid = -1
  
 var[1] = [[
 set_default_color|`o
-add_label_with_icon|big|`9Introvert Proxy````|left|32|
+add_label_with_icon|big|`9Fayer Proxy````|left|32|
 add_image_button|banner|interface/large/menubanners.rttex|noflags|||
 add_smalltext|`oCurrent World : `2]]..GetLocal().world..[[|left|
 add_smalltext|`o X : `2]]..math.floor(GetLocal().tile_x)..[[ `0x `oY : `2]]..math.floor(GetLocal().tile_y)..[[|left|
 add_smalltext|`oUser ID : `b]]..math.floor(GetLocal().userid)..[[ `0x `oNet ID : `2]]..math.floor(GetLocal().netid)..[[|left|
 add_smalltext|`2Version: ]] .. version .. [[|
-add_smalltext|Welcome, ]] .. GetLocal().name .. [[. This script is made by Introvert#7672, if you've purchased this from another source please be careful.|
+add_smalltext|Welcome, ]] .. GetLocal().name .. [[. This script is made by Fayer#0497, if you've purchased this from another source please be careful.|
 add_spacer|small|
 add_label_with_icon|small|`9Updates````|left|32|
 add_smalltext|`^- New Command - /fc.|
@@ -134,13 +133,13 @@ var.netid = -1
  
 var[1] = [[
 set_default_color|`o
-add_label_with_icon|big|`9Introvert Proxy````|left|32|
+add_label_with_icon|big|`9Fayer Proxy````|left|32|
 add_image_button|banner|interface/large/menubanners.rttex|noflags|||
 add_smalltext|`oCurrent World : `2]]..GetLocal().world..[[|left|
 add_smalltext|`o X : `2]]..math.floor(GetLocal().tile_x)..[[ `0x `oY : `2]]..math.floor(GetLocal().tile_y)..[[|left|
 add_smalltext|`oUser ID : `b]]..math.floor(GetLocal().userid)..[[ `0x `oNet ID : `2]]..math.floor(GetLocal().netid)..[[|left|
 add_smalltext|`2Version: ]] .. version .. [[|
-add_smalltext|Welcome, ]] .. GetLocal().name .. [[. This script is made by Introvert#7672, if you've purchased this from another source please be careful.|
+add_smalltext|Welcome, ]] .. GetLocal().name .. [[. This script is made by Fayer#0497, if you've purchased this from another source please be careful.|
 add_spacer|small|
  
 add_label_with_icon|small|`9Commands````|left|32|
@@ -265,7 +264,7 @@ end
 function log(text)
     local packet = {}
     packet[0] = "OnConsoleMessage"
-    packet[1] = "`0[`^Introvert#7672`0]`o " .. text
+    packet[1] = "`0[`^Fayer#0497`0]`o " .. text
     packet.netid = -1
     SendVarlist(packet)
 end
@@ -546,7 +545,7 @@ var.netid = -1
  
 var[1] = [[
 set_default_color|`o
-add_label_with_icon|big|`9Introvert Proxy````|left|32|
+add_label_with_icon|big|`9Fayer Proxy````|left|32|
 add_image_button|banner|interface/large/menubanners.rttex|noflags|||
 add_textbox|`9List of Display Boxes Coordinates:|
 ]] .. str .. [[
@@ -566,7 +565,7 @@ var.netid = -1
  
 var[1] = [[
 set_default_color|`o
-add_label_with_icon|big|`9Introvert Proxy````|left|32|
+add_label_with_icon|big|`9Fayer Proxy````|left|32|
 add_image_button|banner|interface/large/menubanners.rttex|noflags|||
 add_textbox|`9List of Display Boxes Coordinates:|
 ]] .. str .. [[
@@ -614,7 +613,7 @@ end
 if wl1 > 0 then
 txt = txt .. "`2" .. wl1 .." `9World Locks "
 end
-SendPacket(2, "action|input\ntext|`9[`^Introvert#7672`9] Name: [" .. names .. "] `9Bets:".. txt .."")
+SendPacket(2, "action|input\ntext|`9[`^Fayer#0497`9] Name: [" .. names .. "] `9Bets:".. txt .."")
 if wl1 ~= nil then
 collect2(242, tonumber(collectdd[tonumber(d)]['x']), tonumber(collectdd[tonumber(d)]['y']))
 end
@@ -1048,25 +1047,25 @@ end
 text = ""
 
 if bbgl1 > 0 then
-text = text .. "`2" .. bbgl1 .." `bBlack Gem locks "
+text = text .. "`2" .. bbgl1 .." `bIreng "
 end
 
 if bgl1 > 0 then
-text = text .. "`2" .. bgl1 .." `eBlue Gem locks "
+text = text .. "`2" .. bgl1 .." `eBGL "
 end
  
 if dl1 > 0 then
-text = text .. "`2" .. dl1 .." `cDiamond locks "
+text = text .. "`2" .. dl1 .." `cDL "
 end
  
 if wl1 > 0 then
-text = text .. "`2" .. wl1 .." `9World locks "
+text = text .. "`2" .. wl1 .." `9WL "
 end
 
 text = text .. "!"
 
 text = string.gsub(text, " !", "`9!")
-SendPacket(2, "action|input\ntext|`w[`^Introvert#7672`w] (wl)`9Bets`2:" .. text .. "(wl)")
+SendPacket(2, "action|input\ntext|`w[`^Fayer#0497`w] (shamrock) `^Bets`2:" .. text .. " (shamrock)")
 text = string.gsub(text, "`b", "")
 text = string.gsub(text, "`2", "")
 text = string.gsub(text, "`c", "")
@@ -1085,7 +1084,7 @@ log(win)
  
 end)
 else
-SendPacket(2, "action|input\ntext|(wl)Bets are not the same!(wl)")
+SendPacket(2, "action|input\ntext|`2The bets not same!")
 end
  
 return true
@@ -1307,7 +1306,7 @@ end
 end
 Sleep(1500)
 FindPath(x,y)
-SendPacket(2, "action|input\ntext|`w[`^Introvert#7672`w] `9Winner settled!")
+SendPacket(2, "action|input\ntext|`w[`^Fayer#0497`w] `9Dropped to left player")
 return true
 end
 if a < b then
@@ -1340,7 +1339,7 @@ end
 end
 Sleep(2000)
 FindPath(x,y)
-SendPacket(2, "action|input\ntext|`w[`^Introvert#7672`w] `9Winner settled!")
+SendPacket(2, "action|input\ntext|`w[`^Fayer#0497`w] `9Dropped to right player")
 return true
 end
  
@@ -1387,7 +1386,7 @@ var.netid = -1
  
 var[1] = [[
 set_default_color|`o
-add_label_with_icon|big|`9Introvert Proxy````|left|32|
+add_label_with_icon|big|`9Fayer Proxy````|left|32|
 add_image_button|banner|interface/large/menubanners.rttex|noflags|||
 add_textbox|`9List of Display Boxes Coordinates:|
 ]] .. str .. [[
@@ -1766,7 +1765,7 @@ log("`9Telephone Coordinates Set!")
 
 function logingxd(type, packet)
 	if packet:find("action|enter_game") then
-       OnConsoleMessage("`0[ `3Introvert_7672 `0] `9Removing game freeze / crash..")
+       OnConsoleMessage("`0[ `3Fayer#0497 `0] `9Removing game freeze / crash..")
         SendPacket(2, "action|enter_game")
 		return true
 	end
@@ -1779,8 +1778,8 @@ function check_login(varlist)
         wl_balance = math.floor(GetItemCount(242))
         dl_balance = math.floor(GetItemCount(1796))
         bgl_balance = math.floor(GetItemCount(7188))
-        log("`0[ `3Introvert_7672 `0] `9Player Authentication `2Successful.")
-       log("`0[ `3Introvert_7672 `0] `9WL : `3"..wl_balance.." `1& `9DL : `3"..dl_balance.." `1& `9BGL : `3"..bgl_balance)
+        log("`0[ `3Fayer#0497 `0] `9Player Authentication `2Successful.")
+       log("`0[ `3Fayer#0497 `0] `9WL : `3"..wl_balance.." `1& `9DL : `3"..dl_balance.." `1& `9BGL : `3"..bgl_balance)
         return true
     end
 end
@@ -1833,7 +1832,7 @@ AddCallback("onvariantlist", "OnVarlist", function(vlist)
 
 
 function setwarn(type, packet)
-   if 2 == type and packet:find("/warn") then
+    if packet:find("action|input\n|text|/warn") then
         setwarn_text = packet:gsub("action|input\n|text|/warn", "")
             var2 = {}
             var2[0] = "OnAddNotification"
@@ -1852,8 +1851,8 @@ function setwarn(type, packet)
 
      
 function fc(type, packet)
-   if 2 == type and packet:find("/fc") then
-        OnConsoleMessage("`0[ `3Introvert#7672 `0] `9Closing proxy.")
+  if 2 == type and packet:find("/fc") then
+        OnConsoleMessage("`0[ `3Fayer#0497 `0] `9Closing proxy.")
         RemoveCallbacks()
     return true
     end
@@ -1861,7 +1860,7 @@ end
     
 
 function all_spin(type, packet)
-   if 2 == type and packet:find("/spin all") then
+    if packet == ("action|input\n|text|/spin all") then
         OnConsoleMessage("`0[ `3Introvert_7672 `0] `9Spin mode set to `3QQ & REME")
 
 function Spin_checker(varlist)
@@ -1904,7 +1903,7 @@ end
 
 
 function qq_spin(type, packet)
-   if 2 == type and packet:find("/spin qq") then
+    if packet == ("action|input\n|text|/spin qq") then
         OnConsoleMessage("`0[ `3Introvert_7672 `0] `9Spin mode set to `3QQ")
 function Spin_checker(varlist)
     if varlist[0] == "OnTalkBubble" and varlist[3] ~= -1 and varlist[2]:find("spun the wheel and got") then
@@ -1947,7 +1946,7 @@ end
 
 
 function reme_spin(type, packet)
-   if 2 == type and packet:find("/spin reme") then
+    if packet == ("action|input\n|text|/spin reme") then
         OnConsoleMessage("`0[ `3Introvert_7672 `0] `9Spin mode set to `3REME")
 function Spin_checker(varlist)
     if varlist[0] == "OnTalkBubble" and varlist[3] ~= -1 and varlist[2]:find("spun the wheel and got") then
@@ -1986,43 +1985,8 @@ return true
 end
 end
 
-function Spin_checker(varlist)
-    if varlist[0] == "OnTalkBubble" and varlist[3] ~= -1 and varlist[2]:find("spun the wheel and got") then
-      text = ""
-      if varlist[2]:find("CP:") then
-        start, final = string.find(varlist[2], "=")
-        text = "`0[ `4FAKE `0] " .. string.sub(varlist[2], final + 1)
-      else
-        x = varlist[2]:removeColors()
-        x2 = x:match("spun the wheel and got (%d+)")
-        x2 = tonumber(x2)
-        qq_mode = qq_function(x2)
-        reme_mode2 = reme_function(x2)
-        reme_mode = qq_function(reme_mode2)
-        var = {}
-        var[0] = "OnTalkBubble"
-        var[1] = varlist[1]
-        var[2] = "`0[ `2REAL `0] "..varlist[2]
-        var[3] = -1
-        var.netid = -1
-        SendVarlist(var)
-        return true
-      end
-      SendVarlist({
-        [0] = "OnTalkBubble",
-        [1] = varlist[1],
-        [2] = text,
-        [3] = -1,
-        netid = -1,
-      })
-      return true
-    end
-  end
-
-
-
 function check_spin(type, packet)
-   if 2 == type and packet:find("/spin check") then
+    if packet == ("action|input\n|text|/spin check") then
         OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Spin mode set to `3Checker")
 function Spin_checker(varlist)
     if varlist[0] == "OnTalkBubble" and varlist[3] ~= -1 and varlist[2]:find("spun the wheel and got") then
@@ -2062,8 +2026,60 @@ end
 end
 
 
+fake = false
+fakespinned = false
+	if vlist[0]:find("OnConsoleMessage") then
+        if vlist[1]:find("spun the wheel") and vlist[1]:find("CP:_PL") then
+                -- CP:_PL:0_OID:_CT:[W]_ `6<`1Turkinpippuri``>`` `$`w[`1Turkinpippuri`` spun the wheel and got `b16``!]
+                --log(vlist[1]:find("``>`` `"))
+                lastfakespin = string.sub(vlist[1], vlist[1]:find("6<`") + 4, vlist[1]:find("``>"))
+                --log(lastfakespin)
+                local var = {} --make table
+                var[0] = "OnTalkBubble"
+                var[1] = math.floor(netidfromname(lastfakespin))
+                var[2] = "`w[`4FAKE`w] " .. string.sub(vlist[1], vlist[1]:find(lastfakespin) - 3, string.len(vlist[1]))
+                var[3] = 394
+                var[4] = 0
+                var.netid = -1
+                SendVarlist(var)
+				lastfakespin = "NONE"
+				fakespinned = true
+            return true
+        end
+end
+ 
+if not fakespinned then
+ if vlist[3] == 0 and vlist[2]:find("spun the wheel") then
+spinname = string.sub(vlist[2], 6, vlist[2]:find("spun the wheel") - 3)
+            if lastfakespin ~= spinname then
+                if shownamespin then
+ 
+ 
+                    dog = string.sub(vlist[2], vlist[2]:find("got") + 6, vlist[2]:find("!]") - 3)
+                    ananisikeyim = namefromnetid(math.floor(vlist[1]))
+                    if ananisikeyim:find('`e') then
+                        ananisikeyim = string.sub(ananisikeyim, 0, ananisikeyim:find("`e") - 5)
+                    end
+                    local var = {} --make table
+                    var[0] = "OnNameChanged"
+                    var[1] = ananisikeyim .. " `w[`eSpinned: `c" .. dog .. "`w]"
+                    var.netid = vlist[1]
+                    SendVarlist(var)
+                end
+                local var = {} --make table
+                var[0] = "OnTalkBubble"
+                var[1] = math.floor(vlist[1])
+                var[2] = "`w[`^REAL`w] " .. vlist[2]
+                var[3] = 394
+                var[4] = 0
+                var.netid = -1
+                SendVarlist(var)
+            end
+        return true
+end
+end
+fakespinned = false
 
-  
   
 
 
@@ -2116,7 +2132,6 @@ open2()
 end
 
 AddCallback("fc","OnPacket", fc)
-AddCallback("Spin_checker", "OnVarlist", Spin_checker)
 AddCallback("setwarn","OnPacket", setwarn)
 AddCallback("allspin","OnPacket", all_spin)
 AddCallback("qqspin","OnPacket", qq_spin)
@@ -2125,10 +2140,9 @@ AddCallback("checkspin","OnPacket", check_spin)
 AddCallback("packet", "OnPacket", com)
 AddCallback("Hook", "OnPacket", hook2)
 AddCallback("Detect", "OnVarlist", hook)
-SendPacket(2, "action|input\ntext|`9Proxy by `2Introvert#7672")
+SendPacket(2, "action|input\ntext|`9Proxy by `2Fayer#0497")
 l()
 menu()
-
 
 
 
