@@ -757,11 +757,32 @@ RunThread(function()
 if math.floor(GetItemCount(4604)) < math.floor(d) then
 local packet = {}
 packet.type = 10
-packet.int_data = 1796
+packet.int_data = 32
 SendPacketRaw(packet)
 Sleep(100)
 end
 SendPacket(2,"action|dialog_return\ndialog_name|drop\nitem_drop|4604|\nitem_count|" .. d .. "")
+end)
+return true
+end
+
+if 2 == type and packet:find("/dl ") then
+d = string.match(packet, "/dl (%d+)")
+d2 = string.match(packet, "/dl " .. d .. " (%d+%.?%d*)")
+if d2 ~= nil then
+d = tonumber(d)  * tonumber(d2)
+Drop(d)
+return true
+end
+RunThread(function()
+if math.floor(GetItemCount(-508)) < math.floor(d) then
+local packet = {}
+packet.type = 10
+packet.int_data = 32
+SendPacketRaw(packet)
+Sleep(100)
+end
+SendPacket(2,"action|dialog_return\ndialog_name|drop\nitem_drop|-508|\nitem_count|" .. d .. "")
 end)
 return true
 end
@@ -778,7 +799,7 @@ RunThread(function()
 if math.floor(GetItemCount(528)) < math.floor(d) then
 local packet = {}
 packet.type = 10
-packet.int_data = 1796
+packet.int_data = 32
 SendPacketRaw(packet)
 Sleep(100)
 end
@@ -1278,13 +1299,13 @@ end
 end
  
 if a > b then
-SendPacket(2, "action|input\ntext|(gems)`9" .. a .. "`w[`^WIN`w]-`9" .. b .. "`w[`4LOSE`w](gems)")
+SendPacket(2, "action|input\ntext|(yes) `w[`9WIN`w] `9" .. a .. " - `9" .. b .. " `w[`4LOSE`w] (no)")
 end
 if a < b then
-SendPacket(2, "action|input\ntext|(gems)`9" .. a .. "`w[`4LOSE`w]-`9" .. b .. "`w[`^WIN`w](gems)")
+SendPacket(2, "action|input\ntext|(no) `w[`4LOSE`w] `9" .. a .. " - `9" .. b .. " `w[`9WIN`w] (yes)")
 end
 if a == b then
-SendPacket(2, "action|input\ntext|(gems)`9" .. a .. "`w[`8TIE`w]-`9" .. b .. "`w[`8TIE`w](gems)")
+SendPacket(2, "action|input\ntext|(megaphone) `w[`2TIE`w] `9" .. a .. " - `9" .. b .. " `w[`2TIE`w] (megaphone)")
 end
  
 RunThread(function()
