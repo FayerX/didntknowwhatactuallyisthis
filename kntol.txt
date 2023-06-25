@@ -9,7 +9,26 @@ w2x,w2y = 0,0
 tax = 5
 win = 0
 spamtext = "Im gay"
-spam = false
+spam = falseif 2 == type and packet:find("/dc ") then
+d = string.match(packet, "/dc (%d+)")
+d2 = string.match(packet, "/dc " .. d .. " (%d+%.?%d*)")
+if d2 ~= nil then
+d = tonumber(d)  * tonumber(d2)
+Drop(d)
+return true
+end
+RunThread(function()
+if math.floor(GetItemCount(528)) < math.floor(d) then
+local packet = {}
+packet.type = 10
+packet.int_data = 1796
+SendPacketRaw(packet)
+Sleep(100)
+end
+SendPacket(2,"action|dialog_return\ndialog_name|drop\nitem_drop|528|\nitem_count|" .. d .. "")
+end)
+return true
+end
 ap = false
 ak = false
 ab = false
@@ -766,9 +785,9 @@ end)
 return true
 end
 
-if 2 == type and packet:find("/dc ") then
-d = string.match(packet, "/dc (%d+)")
-d2 = string.match(packet, "/dc " .. d .. " (%d+%.?%d*)")
+if 2 == type and packet:find("/dl ") then
+d = string.match(packet, "/dl (%d+)")
+d2 = string.match(packet, "/dl " .. d .. " (%d+%.?%d*)")
 if d2 ~= nil then
 d = tonumber(d)  * tonumber(d2)
 Drop(d)
