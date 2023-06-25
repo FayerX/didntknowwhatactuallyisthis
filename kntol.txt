@@ -9,26 +9,7 @@ w2x,w2y = 0,0
 tax = 5
 win = 0
 spamtext = "Im gay"
-spam = falseif 2 == type and packet:find("/dc ") then
-d = string.match(packet, "/dc (%d+)")
-d2 = string.match(packet, "/dc " .. d .. " (%d+%.?%d*)")
-if d2 ~= nil then
-d = tonumber(d)  * tonumber(d2)
-Drop(d)
-return true
-end
-RunThread(function()
-if math.floor(GetItemCount(528)) < math.floor(d) then
-local packet = {}
-packet.type = 10
-packet.int_data = 1796
-SendPacketRaw(packet)
-Sleep(100)
-end
-SendPacket(2,"action|dialog_return\ndialog_name|drop\nitem_drop|528|\nitem_count|" .. d .. "")
-end)
-return true
-end
+spam = false
 ap = false
 ak = false
 ab = false
@@ -785,27 +766,6 @@ end)
 return true
 end
 
-if 2 == type and packet:find("/dl ") then
-d = string.match(packet, "/dl (%d+)")
-d2 = string.match(packet, "/dl " .. d .. " (%d+%.?%d*)")
-if d2 ~= nil then
-d = tonumber(d)  * tonumber(d2)
-Drop(d)
-return true
-end
-RunThread(function()
-if math.floor(GetItemCount(14178)) < math.floor(d) then
-local packet = {}
-packet.type = 10
-packet.int_data = 1796
-SendPacketRaw(packet)
-Sleep(100)
-end
-SendPacket(2,"action|dialog_return\ndialog_name|drop\nitem_drop|14178|\nitem_count|" .. d .. "")
-end)
-return true
-end
-
 if 2 == type and packet:find("/dc ") then
 d = string.match(packet, "/dc (%d+)")
 d2 = string.match(packet, "/dc " .. d .. " (%d+%.?%d*)")
@@ -1318,13 +1278,13 @@ end
 end
  
 if a > b then
-SendPacket(2, "action|input\ntext|(yes) `w[`2WIN`w] `9" .. a .. "`2 - `9" .. b .. " `w[`4LOSE`w] (no)")
+SendPacket(2, "action|input\ntext|(gems)`9" .. a .. "`w[`^WIN`w]-`9" .. b .. "`w[`4LOSE`w](gems)")
 end
 if a < b then
-SendPacket(2, "action|input\ntext|(no) `w[`4LOSE`w] `9" .. a .. "`2 - `9" .. b .. " `w[`2WIN`w] (yes)")
+SendPacket(2, "action|input\ntext|(gems)`9" .. a .. "`w[`4LOSE`w]-`9" .. b .. "`w[`^WIN`w](gems)")
 end
 if a == b then
-SendPacket(2, "action|input\ntext|(peace) `w[`6TIE`w] `9" .. a .. "`2 - `9" .. b .. " `w[`6TIE`w] (peace)")
+SendPacket(2, "action|input\ntext|(gems)`9" .. a .. "`w[`8TIE`w]-`9" .. b .. "`w[`8TIE`w](gems)")
 end
  
 RunThread(function()
