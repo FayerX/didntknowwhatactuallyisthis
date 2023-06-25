@@ -1278,13 +1278,13 @@ end
 end
  
 if a > b then
-SendPacket(2, "action|input\ntext|(gems)`9" .. a .. "`w[`^WIN`w]-`9" .. b .. "`w[`4LOSE`w](gems)")
+SendPacket(2, "action|input\ntext|(yes) `w[`2WIN`w] `9" .. a .. "`2 -`9" .. b .. " `w[`4LOSE`w] (no)")
 end
 if a < b then
-SendPacket(2, "action|input\ntext|(gems)`9" .. a .. "`w[`4LOSE`w]-`9" .. b .. "`w[`^WIN`w](gems)")
+SendPacket(2, "action|input\ntext|(no) `w[`4LOSE`w] `9" .. a .. "`2 -`9" .. b .. " `w[`2WIN`w] (yes)")
 end
 if a == b then
-SendPacket(2, "action|input\ntext|(gems)`9" .. a .. "`w[`8TIE`w]-`9" .. b .. "`w[`8TIE`w](gems)")
+SendPacket(2, "action|input\ntext|(peace) `w[`6TIE`w]`9" .. a .. "`2 -`9" .. b .. " `w[`6TIE`w] (peace)")
 end
  
 RunThread(function()
