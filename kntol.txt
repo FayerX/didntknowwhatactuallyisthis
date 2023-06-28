@@ -1129,7 +1129,7 @@ end
 text = text .. "!"
 
 text = string.gsub(text, " !", "`9!")
-SendPacket(2, "action|input\ntext|`w[`^Fayer#0497`w] (shamrock) `^Bets`2:" .. text .. " (shamrock)")
+SendPacket(2, "action|input\ntext|`w[`^Fayer#0497`w] (shamrock) `^Bets`2 : " .. text .. " (shamrock)")
 text = string.gsub(text, "`b", "")
 text = string.gsub(text, "`2", "")
 text = string.gsub(text, "`c", "")
