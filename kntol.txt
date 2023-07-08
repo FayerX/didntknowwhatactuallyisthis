@@ -1012,7 +1012,13 @@ end)
 return true
 end
 
- 
+if 2 == type and packet:find("/sb") then
+SendPacket(2, "action|input\n|text|/sb `^BTK REME USE IGL (X2) AT `4BTK `@#ALWAYSPEPS")
+Sleep(200)
+SendPacket(2, "action|input\n|text|`9Succesfully SB")
+return true
+end
+
 if 2 == type and packet:find("/wd ") then
 d = string.match(packet, "/wd (%d+)")
 SendPacket(2,"action|dialog_return\ndialog_name|bank_withdraw\nbgl_count|" .. d .."")
