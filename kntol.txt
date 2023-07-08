@@ -890,7 +890,8 @@ d = string.match(packet, "/split (%d+)")
 wl1 = GetItemCount(242)
 dl1 = GetItemCount(1796)
 bgl1 = GetItemCount(7188)
-b = (wl1 + dl1 * 100 + bgl1 * 10000)
+ireng1 = GetItemCount(11550)
+b = (wl1 + dl1 * 100 + bgl1 * 10000 + ireng1 * 1000000)
 b = b * d / 100
 Drop(b)
 return true
@@ -929,7 +930,7 @@ Sleep(1500)
 FindPath(x,y)
 end)
 else
-log("`9no previous bet collected")
+log("`9Didnt take collect bet!")
 end
 return true
 end
@@ -1924,7 +1925,7 @@ end
     
 
 function all_spin(type, packet)
-    if packet == ("action|input\n|text|/spin all") then
+if 2 == type and packet:find("/spin all") then
         OnConsoleMessage("`0[ `3Introvert_7672 `0] `9Spin mode set to `3QQ & REME")
 
 function Spin_checker(varlist)
@@ -1967,7 +1968,7 @@ end
 
 
 function qq_spin(type, packet)
-    if packet == ("action|input\n|text|/spin qq") then
+if 2 == type and packet:find("/spin qq") then
         OnConsoleMessage("`0[ `3Introvert_7672 `0] `9Spin mode set to `3QQ")
 function Spin_checker(varlist)
     if varlist[0] == "OnTalkBubble" and varlist[3] ~= -1 and varlist[2]:find("spun the wheel and got") then
@@ -2010,7 +2011,7 @@ end
 
 
 function reme_spin(type, packet)
-    if packet == ("action|input\n|text|/spin reme") then
+if 2 == type and packet:find("/spin reme") then
         OnConsoleMessage("`0[ `3Introvert_7672 `0] `9Spin mode set to `3REME")
 function Spin_checker(varlist)
     if varlist[0] == "OnTalkBubble" and varlist[3] ~= -1 and varlist[2]:find("spun the wheel and got") then
@@ -2050,7 +2051,7 @@ end
 end
 
 function check_spin(type, packet)
-    if packet == ("action|input\n|text|/spin check") then
+if 2 == type and packet:find("/spin check") then
         OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Spin mode set to `3Checker")
 function Spin_checker(varlist)
     if varlist[0] == "OnTalkBubble" and varlist[3] ~= -1 and varlist[2]:find("spun the wheel and got") then
