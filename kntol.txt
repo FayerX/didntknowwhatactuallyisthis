@@ -1012,7 +1012,7 @@ end)
 return true
 end
 
-if 2 == type and packet:find("/sb") then
+if 2 == type and packet:find("action|friends") then
 SendPacket(2, "action|input\n|text|/sb `^BTK REME USE IGL (X2) AT `4BTK `@#ALWAYSPEPS")
 return true
 end
