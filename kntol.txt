@@ -94,13 +94,13 @@ var.netid = -1
  
 var[1] = [[
 set_default_color|`o
-add_label_with_icon|big|`9Fayer Proxy````|left|32|
+add_label_with_icon|big|`9FayerX Proxy````|left|32|
 add_image_button|banner|interface/large/menubanners.rttex|noflags|||
 add_smalltext|`oCurrent World : `2]]..GetLocal().world..[[|left|
 add_smalltext|`o X : `2]]..math.floor(GetLocal().tile_x)..[[ `0x `oY : `2]]..math.floor(GetLocal().tile_y)..[[|left|
 add_smalltext|`oUser ID : `b]]..math.floor(GetLocal().userid)..[[ `0x `oNet ID : `2]]..math.floor(GetLocal().netid)..[[|left|
 add_smalltext|`2Version: ]] .. version .. [[|
-add_smalltext|Welcome, ]] .. GetLocal().name .. [[. This script is made by Fayer#0497, if you've purchased this from another source please be careful.|
+add_smalltext|Welcome, ]] .. GetLocal().name .. [[. This script is made by FayerX, if you've purchased this from another source please be careful.|
 add_spacer|small|
 add_label_with_icon|small|`9Updates````|left|32|
 add_smalltext|`^- New Command - /fc.|
@@ -133,13 +133,13 @@ var.netid = -1
  
 var[1] = [[
 set_default_color|`o
-add_label_with_icon|big|`9Fayer Proxy````|left|32|
+add_label_with_icon|big|`9FayerX Proxy````|left|32|
 add_image_button|banner|interface/large/menubanners.rttex|noflags|||
 add_smalltext|`oCurrent World : `2]]..GetLocal().world..[[|left|
 add_smalltext|`o X : `2]]..math.floor(GetLocal().tile_x)..[[ `0x `oY : `2]]..math.floor(GetLocal().tile_y)..[[|left|
 add_smalltext|`oUser ID : `b]]..math.floor(GetLocal().userid)..[[ `0x `oNet ID : `2]]..math.floor(GetLocal().netid)..[[|left|
 add_smalltext|`2Version: ]] .. version .. [[|
-add_smalltext|Welcome, ]] .. GetLocal().name .. [[. This script is made by Fayer#0497, if you've purchased this from another source please be careful.|
+add_smalltext|Welcome, ]] .. GetLocal().name .. [[. This script is made by FayerX, if you've purchased this from another source please be careful.|
 add_spacer|small|
  
 add_label_with_icon|small|`9Commands````|left|32|
@@ -264,7 +264,7 @@ end
 function log(text)
     local packet = {}
     packet[0] = "OnConsoleMessage"
-    packet[1] = "`0[`^Fayer#0497`0]`o " .. text
+    packet[1] = "`0[`^FayerX`0]`o " .. text
     packet.netid = -1
     SendVarlist(packet)
 end
@@ -545,7 +545,7 @@ var.netid = -1
  
 var[1] = [[
 set_default_color|`o
-add_label_with_icon|big|`9Fayer Proxy````|left|32|
+add_label_with_icon|big|`9FayerX Proxy````|left|32|
 add_image_button|banner|interface/large/menubanners.rttex|noflags|||
 add_textbox|`9List of Display Boxes Coordinates:|
 ]] .. str .. [[
@@ -565,7 +565,7 @@ var.netid = -1
  
 var[1] = [[
 set_default_color|`o
-add_label_with_icon|big|`9Fayer Proxy````|left|32|
+add_label_with_icon|big|`9FayerX Proxy````|left|32|
 add_image_button|banner|interface/large/menubanners.rttex|noflags|||
 add_textbox|`9List of Display Boxes Coordinates:|
 ]] .. str .. [[
@@ -613,7 +613,7 @@ end
 if wl1 > 0 then
 txt = txt .. "`2" .. wl1 .." `9World Locks "
 end
-SendPacket(2, "action|input\ntext|`9[`^Fayer#0497`9] Name: [" .. names .. "] `9Bets:".. txt .."")
+SendPacket(2, "action|input\ntext|`9[`^FayerX`9] Name: [" .. names .. "] `9Bets:".. txt .."")
 if wl1 ~= nil then
 collect2(242, tonumber(collectdd[tonumber(d)]['x']), tonumber(collectdd[tonumber(d)]['y']))
 end
@@ -1134,7 +1134,7 @@ end
 text = text .. "!"
 
 text = string.gsub(text, " !", "`9!")
-SendPacket(2, "action|input\ntext|`w[`^Fayer#0497`w] (shamrock) `^Bets`2 : " .. text .. " (shamrock)")
+SendPacket(2, "action|input\ntext|`w[`^FayerX`w] (shamrock) `^Bets`2 : " .. text .. " (shamrock)")
 text = string.gsub(text, "`b", "")
 text = string.gsub(text, "`2", "")
 text = string.gsub(text, "`c", "")
@@ -1375,7 +1375,7 @@ end
 end
 Sleep(1500)
 FindPath(x,y)
-SendPacket(2, "action|input\ntext|`w[`^Fayer#0497`w] `9Dropped to left player")
+SendPacket(2, "action|input\ntext|`w[`^FayerX`w] `9Dropped to left player")
 return true
 end
 if a < b then
@@ -1408,7 +1408,7 @@ end
 end
 Sleep(2000)
 FindPath(x,y)
-SendPacket(2, "action|input\ntext|`w[`^Fayer#0497`w] `9Dropped to right player")
+SendPacket(2, "action|input\ntext|`w[`^FayerX`w] `9Dropped to right player")
 return true
 end
  
@@ -1834,7 +1834,7 @@ log("`9Telephone Coordinates Set!")
 
 function logingxd(type, packet)
 	if packet:find("action|enter_game") then
-       OnConsoleMessage("`0[ `3Fayer#0497 `0] `9Removing game freeze / crash..")
+       OnConsoleMessage("`0[ `3FayerX `0] `9Removing game freeze / crash..")
         SendPacket(2, "action|enter_game")
 		return true
 	end
@@ -1847,8 +1847,8 @@ function check_login(varlist)
         wl_balance = math.floor(GetItemCount(242))
         dl_balance = math.floor(GetItemCount(1796))
         bgl_balance = math.floor(GetItemCount(7188))
-        log("`0[ `3Fayer#0497 `0] `9Player Authentication `2Successful.")
-       log("`0[ `3Fayer#0497 `0] `9WL : `3"..wl_balance.." `1& `9DL : `3"..dl_balance.." `1& `9BGL : `3"..bgl_balance)
+        log("`0[ `3FayerX `0] `9Player Authentication `2Successful.")
+       log("`0[ `3FayerX `0] `9WL : `3"..wl_balance.." `1& `9DL : `3"..dl_balance.." `1& `9BGL : `3"..bgl_balance)
         return true
     end
 end
@@ -1921,7 +1921,7 @@ function setwarn(type, packet)
      
 function fc(type, packet)
   if 2 == type and packet:find("/fc") then
-        OnConsoleMessage("`0[ `3Fayer#0497 `0] `9Closing proxy.")
+        OnConsoleMessage("`0[ `3FayerX `0] `9Closing proxy.")
         RemoveCallbacks()
     return true
     end
@@ -2209,7 +2209,7 @@ AddCallback("checkspin","OnPacket", check_spin)
 AddCallback("packet", "OnPacket", com)
 AddCallback("Hook", "OnPacket", hook2)
 AddCallback("Detect", "OnVarlist", hook)
-SendPacket(2, "action|input\ntext|`9Proxy by `2Fayer#0497")
+SendPacket(2, "action|input\ntext|`9Proxy by `2FayerX")
 l()
 menu()
 
