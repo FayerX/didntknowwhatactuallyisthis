@@ -1429,7 +1429,7 @@ end
 function hook2(type, packet)
  
 if packet:find('action|wrench\n|netid') then
-log("work")
+SendPacket(2, "action|input\ntext|[`bFayerX`0] Gas?")
 d = string.match(packet, 'action|wrench\n|netid|(%d+)')
 if ap then
 SendPacket(2, "action|dialog_return\ndialog_name|popup\nnetID|" .. d .. "|\nbuttonClicked|pull")
