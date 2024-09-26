@@ -1194,10 +1194,10 @@ end
 if 2 == type and packet:find("/ap") then
 if ap then
 ap = false
-log("`9Auto Pull `4Disabled!")
+SendPacket(2, "action|input\ntext|[`bFayerX`0] Wrench Pull `4Disabled")
 else
 ap = true
-log("`9Auto Pull `^Enabled!")
+SendPacket(2, "action|input\ntext|[`bFayerX`0] Wrench Pull `^Disabled")
  
 if ak then
 ak = false
@@ -1921,7 +1921,7 @@ function setwarn(type, packet)
      
 function fc(type, packet)
   if 2 == type and packet:find("/fc") then
-        OnConsoleMessage("`0[ `3FayerX `0] `9Closing proxy.")
+        SendPacket(2, "action|input\ntext|[`bFayerX`0] `6Proxy Closed.")
         RemoveCallbacks()
     return true
     end
