@@ -8,7 +8,7 @@ w1x,w1y = 0,0
 w2x,w2y = 0,0
 tax = 5
 win = 0
-spamtext = "Im gay"
+spamtext = "FayerX"
 spam = false
 ap = false
 ak = false
@@ -2209,7 +2209,7 @@ AddCallback("checkspin","OnPacket", check_spin)
 AddCallback("packet", "OnPacket", com)
 AddCallback("Hook", "OnPacket", hook2)
 AddCallback("Detect", "OnVarlist", hook)
-SendPacket(2, "action|input\ntext|`9Proxy by `2FayerX")
+SendPacket(2, "action|input\ntext|`9Proxy by `bFayerX")
 l()
 menu()
 
