@@ -1012,11 +1012,6 @@ end)
 return true
 end
 
-if 2 == type and packet:find("action|friends") then
-SendPacket(2, "action|input\n|text|/sb `^BTK REME USE IGL (X2) AT `4BTK `@#ALWAYSPEPS")
-return true
-end
-
 if 2 == type and packet:find("/wd ") then
 d = string.match(packet, "/wd (%d+)")
 SendPacket(2,"action|dialog_return\ndialog_name|bank_withdraw\nbgl_count|" .. d .."")
@@ -1038,13 +1033,13 @@ end
  
 if 2 == type and packet:find("/s1") then
 setgem(1)
-SendPacket(2, "action|input\ntext|`w[`bFayerX`w] `2Gem 1 position set!")
+SendPacket(2, "action|input\ntext|`w[`bFayerX`w] `6Setting Gem Position 1")
 return true
 end
  
 if 2 == type and packet:find("/s2") then
 setgem(2)
-SendPacket(2, "action|input\ntext|`w[`bFayerX`w] `2Gem 2 position set!")
+SendPacket(2, "action|input\ntext|`w[`bFayerX`w] `6Setting Gem Position 2")
 return true
 end
  
@@ -1057,14 +1052,14 @@ if 2 == type and packet:find("/ws1") then
 w1x =  math.floor(GetLocal().pos_x // 32)
 w1y = math.floor(GetLocal().pos_y // 32)
  
-SendPacket(2, "action|input\ntext|`w[`bFayerX`w] `2Player 1 position set!")
+SendPacket(2, "action|input\ntext|`w[`bFayerX`w] `6Player 1 position set!")
 return true
 end
  
 if 2 == type and packet:find("/ws2") then
 w2x =  math.floor(GetLocal().pos_x // 32)
 w2y = math.floor(GetLocal().pos_y // 32)
-SendPacket(2, "action|input\ntext|`w[`bFayerX`w] `2Player 2 position set!")
+SendPacket(2, "action|input\ntext|`w[`bFayerX`w] `6Player 2 position set!")
 return true
 end
  
