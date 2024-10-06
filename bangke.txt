@@ -264,7 +264,7 @@ end
 function log(text)
     local packet = {}
     packet[0] = "OnConsoleMessage"
-    packet[1] = "`0[`^FayerX`0]`o " .. text
+    packet[1] = "`0[`bFayerX`0]`o " .. text
     packet.netid = -1
     SendVarlist(packet)
 end
@@ -613,7 +613,7 @@ end
 if wl1 > 0 then
 txt = txt .. "`2" .. wl1 .." `9World Locks "
 end
-SendPacket(2, "action|input\ntext|`9[`^FayerX`9] Name: [" .. names .. "] `9Bets:".. txt .."")
+SendPacket(2, "action|input\ntext|`w[`bFayerX`w] Name: [" .. names .. "] `9Bets:".. txt .."")
 if wl1 ~= nil then
 collect2(242, tonumber(collectdd[tonumber(d)]['x']), tonumber(collectdd[tonumber(d)]['y']))
 end
@@ -1131,7 +1131,7 @@ end
 text = text .. "!"
 
 text = string.gsub(text, " !", "`9!")
-SendPacket(2, "action|input\ntext|`w[`^FayerX`w] (shamrock) `^Bets`2 : " .. text .. " (shamrock)")
+SendPacket(2, "action|input\ntext|`w[`bFayerX`w] (shamrock) `^Bets`2 : " .. text .. " (shamrock)")
 text = string.gsub(text, "`b", "")
 text = string.gsub(text, "`2", "")
 text = string.gsub(text, "`c", "")
@@ -1372,7 +1372,7 @@ end
 end
 Sleep(1500)
 FindPath(x,y)
-SendPacket(2, "action|input\ntext|`w[`^FayerX`w] `9Dropped to left player")
+SendPacket(2, "action|input\ntext|`w[`bFayerX`w] `9Dropped to left player")
 return true
 end
 if a < b then
@@ -1405,7 +1405,7 @@ end
 end
 Sleep(2000)
 FindPath(x,y)
-SendPacket(2, "action|input\ntext|`w[`^FayerX`w] `9Dropped to right player")
+SendPacket(2, "action|input\ntext|`w[`bFayerX`w] `9Dropped to right player")
 return true
 end
  
