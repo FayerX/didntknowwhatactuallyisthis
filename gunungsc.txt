@@ -1,0 +1,77 @@
+-- Load Rayfield UI Library
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+-- Create main window
+local MainWindow = Rayfield:CreateWindow({
+   Name = "FayerX Universe",
+   Icon = 0,
+   LoadingTitle = "FayerX Script Loading...",
+   LoadingSubtitle = "by FayerX",
+   ShowText = "FayerX",
+   Theme = "Default",
+   ToggleUIKeybind = Enum.KeyCode.K,
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false,
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil,
+      FileName = "FayerX Universe"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink",
+      RememberJoins = true
+   },
+   KeySystem = true,
+   KeySettings = {
+      Title = "FayerX Key",
+      Subtitle = "Key System.",
+      Note = "Join Discord buat dapetin Key-nya!",
+      FileName = "Key",
+      SaveKey = false,
+      GrabKeyFromSite = false,
+      Key = {"69j4w4"}
+   }
+})
+
+-- Create Tab
+local DaunTab = MainWindow:CreateTab("Daun", 4483362458)
+
+-- Store toggle state globally
+getgenv().daunSummitEnabled = false
+
+-- Create Toggle
+local Toggle = DaunTab:CreateToggle({
+   Name = "Auto Summit Mount Daun",
+   CurrentValue = false,
+   Flag = "AutoSummitDaun",
+   Callback = function(Value)
+      getgenv().daunSummitEnabled = Value
+
+      if Value then
+         task.spawn(function()
+            while getgenv().daunSummitEnabled and task.wait(1) do
+               local player = game.Players.LocalPlayer
+               local hrp = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+               if hrp then
+                  local points = {
+                     Vector3.new(-623.600830, 250.103806, -383.883972),
+                     Vector3.new(-1202.625488, 261.418488, -487.486389),
+                     Vector3.new(-1397.822266, 578.012268, -950.702454),
+                     Vector3.new(-1700.736206, 816.484802, -1398.892822),
+                     Vector3.new(-3228.647949, 1715.498291, -2587.793701),
+                     Vector3.new(-3332.708252, 1850, -2603.694092)
+                  }
+
+                  local delays = {1, 1, 1, 1, 3, 8}
+                  for i, pos in ipairs(points) do
+                     if not getgenv().daunSummitEnabled then break end
+                     hrp.CFrame = CFrame.new(pos)
+                     task.wait(delays[i])
+                  end
+               end
+            end
+         end)
+      end
+   end
+})
